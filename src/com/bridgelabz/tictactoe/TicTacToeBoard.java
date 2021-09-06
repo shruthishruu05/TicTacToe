@@ -359,7 +359,6 @@ public class TicTacToeBoard
 			computerInput = 'X';
 		System.out.println("human has selected : " + humanInput);
 		System.out.println("Computer choice is : " + computerInput);
-	
 	}
 	
 	
