@@ -5,6 +5,7 @@ public class TicTacToeMain {
 		TicTacToeBoard ticTacToeBoard = new TicTacToeBoard();
 		System.out.println("Toc Tac Tao Game");
 		ticTacToeBoard.start();
-		//ticTacToeBoard.showBoard();
+		System.out.println("Please enter 'O' or 'X'");
+		ticTacToeBoard.InputChoice();
 	}
 }
