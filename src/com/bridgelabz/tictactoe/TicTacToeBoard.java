@@ -29,7 +29,7 @@ public class TicTacToeBoard
 		while (true) {
 
 			desiredLocation = scanner.nextInt();
-			if (checkIfEmpty(desiredLocation) && desiredLocation < 10 && desiredLocation > 0) {
+			if (checkIfEmpty(desiredLocation) ) {
 				System.out.println("Enter the human input");
 				board[desiredLocation] = humanInput;
 				showBoard();
@@ -44,10 +44,10 @@ public class TicTacToeBoard
 	}
 	public static void computerMove() {
 		do {
-			System.out.println("Computer turn");
-			desiredLocation = 	(int)(Math.floor(Math.random()*10)%9) + 1;								
+			desiredLocation = 	(int)(Math.floor(Math.random()*10)%9) + 1;	
+			if(predictWinLocation()) {}
 		} while (!checkIfEmpty(desiredLocation));
-
+		
 		board[desiredLocation] = computerInput;
 		showBoard();
 	}
@@ -105,6 +105,107 @@ public class TicTacToeBoard
 			System.out.println("tied");
 
 	}
+	public static boolean predictWinLocation() {
+		if (board[1] == computer && board[2] == computer && board[3] == ' ') {
+			desiredLocation = 3;
+			return true;
+		}
+		if (board[1] == computer && board[3] == computer && board[2] == ' ') {
+			desiredLocation = 2;
+			return true;
+		}
+		if (board[3] == computer && board[2] == computer && board[1] == ' ') {
+			desiredLocation = 1;
+			return true;
+		}
+		if (board[4] == computer && board[5] == computer && board[6] == ' ') {
+			desiredLocation = 6;
+			return true;
+		}
+		if (board[4] == computer && board[6] == computer && board[5] == ' ') {
+			desiredLocation = 5;
+			return true;
+		}
+		if (board[6] == computer && board[5] == computer && board[4] == ' ') {
+			desiredLocation = 4;
+			return true;
+		}
+		if (board[7] == computer && board[8] == computer && board[9] == ' ') {
+			desiredLocation = 9;
+			return true;
+		}
+		if (board[7] == computer && board[9] == computer && board[8] == ' ') {
+			desiredLocation = 8;
+			return true;
+		}
+		if (board[9] == computer && board[8] == computer && board[7] == ' ') {
+			desiredLocation = 7;
+			return true;
+		}
+		if (board[1] == computer && board[4] == computer && board[7] == ' ') {
+			desiredLocation = 7;
+			return true;
+		}
+		if (board[1] == computer && board[7] == computer && board[4] == ' ') {
+			desiredLocation = 4;
+			return true;
+		}
+		if (board[7] == computer && board[4] == computer && board[1] == ' ') {
+			desiredLocation = 1;
+			return true;
+		}
+		if (board[2] == computer && board[5] == computer && board[8] == ' ') {
+			desiredLocation = 8;
+			return true;
+		}
+		if (board[2] == computer && board[8] == computer && board[5] == ' ') {
+			desiredLocation = 5;
+			return true;
+		}
+		if (board[8] == computer && board[5] == computer && board[2] == ' ') {
+			desiredLocation = 2;
+			return true;
+		}
+		if (board[3] == computer && board[6] == computer && board[9] == ' ') {
+			desiredLocation = 9;
+			return true;
+		}
+		if (board[3] == computer && board[9] == computer && board[6] == ' ') {
+			desiredLocation = 6;
+			return true;
+		}
+		if (board[9] == computer && board[6] == computer && board[3] == ' ') {
+			desiredLocation = 3;
+			return true;
+		}
+		if (board[1] == computer && board[5] == computer && board[9] == ' ') {
+			desiredLocation = 9;
+			return true;
+		}
+		if (board[1] == computer && board[9] == computer && board[5] == ' ') {
+			desiredLocation = 5;
+			return true;
+		}
+		if (board[9] == computer && board[5] == computer && board[1] == ' ') {
+			desiredLocation = 1;
+			return true;
+		}
+		if (board[3] == computer && board[5] == computer && board[7] == ' ') {
+			desiredLocation = 7;
+			return true;
+		}
+		if (board[3] == computer && board[7] == computer && board[5] == ' ') {
+			desiredLocation = 5;
+			return true;
+		}
+		if (board[7] == computer && board[5] == computer && board[3] == ' ') {
+			desiredLocation = 3;
+			return true;
+		} else
+			return false;
+	}
+
+	
 	public static boolean checkIfEmpty(int desiredLocation)
 	{	
 		if(board[desiredLocation]== ' ')
