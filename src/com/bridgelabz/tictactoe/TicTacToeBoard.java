@@ -46,7 +46,7 @@ public class TicTacToeBoard
 	public static void computerMove() {
 		do {
 			desiredLocation = 	(int)(Math.floor(Math.random()*10)%9) + 1;	
-			if(findingWinLocation()) {}
+			if(findingWinLocationBlock()) {}
 		} while (!checkIfEmpty(desiredLocation));
 		
 		board[desiredLocation] = computerInput;
@@ -105,106 +105,201 @@ public class TicTacToeBoard
 			System.out.println("tied");
 
 	}
-	public static boolean findingWinLocation() {
-		if (board[1] == computer && board[2] == computer && board[3] == ' ') {
+	public static boolean findingWinLocationBlock() {
+		if (board[1] == computerInput && board[2] == computerInput && board[3] == ' ') {
 			desiredLocation = 3;
 			return true;
 		}
-		if (board[1] == computer && board[3] == computer && board[2] == ' ') {
+		if (board[1] == computerInput && board[3] == computerInput && board[2] == ' ') {
 			desiredLocation = 2;
 			return true;
 		}
-		if (board[3] == computer && board[2] == computer && board[1] == ' ') {
+		if (board[3] == computerInput && board[2] == computerInput && board[1] == ' ') {
 			desiredLocation = 1;
 			return true;
 		}
-		if (board[4] == computer && board[5] == computer && board[6] == ' ') {
+		if (board[4] == computerInput && board[5] == computerInput && board[6] == ' ') {
 			desiredLocation = 6;
 			return true;
 		}
-		if (board[4] == computer && board[6] == computer && board[5] == ' ') {
+		if (board[4] == computerInput && board[6] == computerInput && board[5] == ' ') {
 			desiredLocation = 5;
 			return true;
 		}
-		if (board[6] == computer && board[5] == computer && board[4] == ' ') {
+		if (board[6] == computerInput && board[5] == computerInput && board[4] == ' ') {
 			desiredLocation = 4;
 			return true;
 		}
-		if (board[7] == computer && board[8] == computer && board[9] == ' ') {
+		if (board[7] == computerInput && board[8] == computerInput && board[9] == ' ') {
 			desiredLocation = 9;
 			return true;
 		}
-		if (board[7] == computer && board[9] == computer && board[8] == ' ') {
+		if (board[7] == computerInput && board[9] == computerInput && board[8] == ' ') {
 			desiredLocation = 8;
 			return true;
 		}
-		if (board[9] == computer && board[8] == computer && board[7] == ' ') {
+		if (board[9] == computerInput && board[8] == computerInput && board[7] == ' ') {
 			desiredLocation = 7;
 			return true;
 		}
-		if (board[1] == computer && board[4] == computer && board[7] == ' ') {
+		if (board[1] == computerInput && board[4] == computerInput && board[7] == ' ') {
 			desiredLocation = 7;
 			return true;
 		}
-		if (board[1] == computer && board[7] == computer && board[4] == ' ') {
+		if (board[1] == computerInput && board[7] == computerInput && board[4] == ' ') {
 			desiredLocation = 4;
 			return true;
 		}
-		if (board[7] == computer && board[4] == computer && board[1] == ' ') {
+		if (board[7] == computerInput && board[4] == computerInput && board[1] == ' ') {
 			desiredLocation = 1;
 			return true;
 		}
-		if (board[2] == computer && board[5] == computer && board[8] == ' ') {
+		if (board[2] == computerInput && board[5] == computerInput && board[8] == ' ') {
 			desiredLocation = 8;
 			return true;
 		}
-		if (board[2] == computer && board[8] == computer && board[5] == ' ') {
+		if (board[2] == computerInput && board[8] == computerInput && board[5] == ' ') {
 			desiredLocation = 5;
 			return true;
 		}
-		if (board[8] == computer && board[5] == computer && board[2] == ' ') {
+		if (board[8] == computerInput && board[5] == computerInput && board[2] == ' ') {
 			desiredLocation = 2;
 			return true;
 		}
-		if (board[3] == computer && board[6] == computer && board[9] == ' ') {
+		if (board[3] == computerInput && board[6] == computerInput && board[9] == ' ') {
 			desiredLocation = 9;
 			return true;
 		}
-		if (board[3] == computer && board[9] == computer && board[6] == ' ') {
+		if (board[3] == computerInput && board[9] == computerInput && board[6] == ' ') {
 			desiredLocation = 6;
 			return true;
 		}
-		if (board[9] == computer && board[6] == computer && board[3] == ' ') {
+		if (board[9] == computerInput && board[6] == computerInput && board[3] == ' ') {
 			desiredLocation = 3;
 			return true;
 		}
-		if (board[1] == computer && board[5] == computer && board[9] == ' ') {
+		if (board[1] == computerInput && board[5] == computerInput && board[9] == ' ') {
 			desiredLocation = 9;
 			return true;
 		}
-		if (board[1] == computer && board[9] == computer && board[5] == ' ') {
+		if (board[1] == computerInput && board[9] == computerInput && board[5] == ' ') {
 			desiredLocation = 5;
 			return true;
 		}
-		if (board[9] == computer && board[5] == computer && board[1] == ' ') {
+		if (board[9] == computerInput && board[5] == computerInput && board[1] == ' ') {
 			desiredLocation = 1;
 			return true;
 		}
-		if (board[3] == computer && board[5] == computer && board[7] == ' ') {
+		if (board[3] == computerInput && board[5] == computerInput && board[7] == ' ') {
 			desiredLocation = 7;
 			return true;
 		}
-		if (board[3] == computer && board[7] == computer && board[5] == ' ') {
+		if (board[3] == computerInput && board[7] == computerInput && board[5] == ' ') {
 			desiredLocation = 5;
 			return true;
 		}
-		if (board[7] == computer && board[5] == computer && board[3] == ' ') {
+		if (board[7] == computerInput && board[5] == computerInput && board[3] == ' ') {
+			desiredLocation = 3;
+			return true;
+		}
+		if (board[1] == humanInput && board[2] == humanInput && board[3] == ' ') {
+			desiredLocation = 3;
+			return true;
+		}
+		if (board[1] == humanInput && board[3] == humanInput && board[2] == ' ') {
+			desiredLocation = 2;
+			return true;
+		}
+		if (board[3] == humanInput && board[2] == humanInput && board[1] == ' ') {
+			desiredLocation = 1;
+			return true;
+		}
+		if (board[4] == humanInput && board[5] == humanInput && board[6] == ' ') {
+			desiredLocation = 6;
+			return true;
+		}
+		if (board[4] == humanInput && board[6] == humanInput && board[5] == ' ') {
+			desiredLocation = 5;
+			return true;
+		}
+		if (board[6] == humanInput && board[5] == humanInput && board[4] == ' ') {
+			desiredLocation = 4;
+			return true;
+		}
+		if (board[7] == humanInput && board[8] == humanInput && board[9] == ' ') {
+			desiredLocation = 9;
+			return true;
+		}
+		if (board[7] == humanInput && board[9] == humanInput && board[8] == ' ') {
+			desiredLocation = 8;
+			return true;
+		}
+		if (board[9] == humanInput && board[8] == humanInput && board[7] == ' ') {
+			desiredLocation = 7;
+			return true;
+		}
+		if (board[1] == humanInput && board[4] == humanInput && board[7] == ' ') {
+			desiredLocation = 7;
+			return true;
+		}
+		if (board[1] == humanInput && board[7] == humanInput && board[4] == ' ') {
+			desiredLocation = 4;
+			return true;
+		}
+		if (board[7] == humanInput && board[4] == humanInput && board[1] == ' ') {
+			desiredLocation = 1;
+			return true;
+		}
+		if (board[2] == humanInput && board[5] == humanInput && board[8] == ' ') {
+			desiredLocation = 8;
+			return true;
+		}
+		if (board[2] == humanInput && board[8] == humanInput && board[5] == ' ') {
+			desiredLocation = 5;
+			return true;
+		}
+		if (board[8] == humanInput && board[5] == humanInput && board[2] == ' ') {
+			desiredLocation = 2;
+			return true;
+		}
+		if (board[3] == humanInput && board[6] == humanInput && board[9] == ' ') {
+			desiredLocation = 9;
+			return true;
+		}
+		if (board[3] == humanInput && board[9] == humanInput && board[6] == ' ') {
+			desiredLocation = 6;
+			return true;
+		}
+		if (board[9] == humanInput && board[6] == humanInput && board[3] == ' ') {
+			desiredLocation = 3;
+			return true;
+		}
+		if (board[1] == humanInput && board[5] == humanInput && board[9] == ' ') {
+			desiredLocation = 9;
+			return true;
+		}
+		if (board[1] == humanInput && board[9] == humanInput && board[5] == ' ') {
+			desiredLocation = 5;
+			return true;
+		}
+		if (board[9] == humanInput && board[5] == humanInput && board[1] == ' ') {
+			desiredLocation = 1;
+			return true;
+		}
+		if (board[3] == humanInput && board[5] == humanInput && board[7] == ' ') {
+			desiredLocation = 7;
+			return true;
+		}
+		if (board[3] == humanInput && board[7] == humanInput && board[5] == ' ') {
+			desiredLocation = 5;
+			return true;
+		}
+		if (board[7] == humanInput && board[5] == humanInput && board[3] == ' ') {
 			desiredLocation = 3;
 			return true;
 		} else
 			return false;
 	}
-
 	
 	public static boolean checkIfEmpty(int desiredLocation)
 	{	
