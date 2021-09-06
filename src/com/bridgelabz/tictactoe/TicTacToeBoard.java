@@ -26,7 +26,7 @@ public class TicTacToeBoard {
 	
 	public void InputChoice() {
 		char userInput,computerInput;
-		System.out.println("Enter input choice");
+		System.out.println(" Enter input choice");
 		int choice = scanner.nextInt();
 		
 		if(choice==1) {
