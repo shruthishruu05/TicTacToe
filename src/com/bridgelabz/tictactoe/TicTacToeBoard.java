@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class TicTacToeBoard 
 {
-	static char computerInput,humanInput;
+	static char computerInput,humanInput,first;
 	static Scanner scanner = new Scanner(System.in);
 	static char[] board = new char[10];
 	static int desiredLocation;
@@ -58,7 +58,23 @@ public class TicTacToeBoard
 		char result = (computerInput =='X')? 'X':'0';
 		
 	}
-	
+	public static void checkWhoPlays()
+	{
+		System.out.println("Tossing");
+		String first;
+
+		if (Math.random() > 0.5)
+			first = "c";
+		else
+			first = "h";
+
+		if (first.equals("c")) {
+			System.out.println("Computer goes first");
+		}
+		else {
+			System.out.println("human goes first");
+		}
+	}
 	public static void main(String [] args) {
 		playerInputChoice();
 		createBoard();
@@ -68,6 +84,7 @@ public class TicTacToeBoard
 		System.out.println("Enter the value");
 		char value = scanner.next().charAt(0);
 		moveDesiredLocation(value,result);
+		checkWhoPlays();
 	}
 	
 }
