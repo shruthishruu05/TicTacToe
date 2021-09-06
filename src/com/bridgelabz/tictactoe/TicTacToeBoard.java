@@ -378,12 +378,26 @@ public class TicTacToeBoard
 			System.out.println("human goes first");
 		}	
 	}
+	public static boolean playNext() {
+		int choice;
+		System.out.println("Want to Continue game? (1-Yes, 0-No)");
+		choice = scanner.nextInt();
+		return choice==1?true:false;
+	}
 	public static void main(String [] args) {
 		createBoard();
 		playerInputChoice();
 		checkWhoPlays();
 		showBoard();
 		start();
+		while(playNext()) {
+			createBoard();
+			playerInputChoice();
+			checkWhoPlays();
+			showBoard();
+			start();
+		}
+		System.out.println("Thanks for playing");
 	}
 }
 
