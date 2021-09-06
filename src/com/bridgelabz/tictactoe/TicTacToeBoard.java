@@ -2,6 +2,7 @@ package com.bridgelabz.tictactoe;
 import java.util.Scanner;
 public class TicTacToeBoard 
 {
+	
 	static char computerInput,humanInput,first,value,human,computer;
 	static Scanner scanner = new Scanner(System.in);
 	static char[] board = new char[10];
@@ -45,13 +46,12 @@ public class TicTacToeBoard
 	public static void computerMove() {
 		do {
 			desiredLocation = 	(int)(Math.floor(Math.random()*10)%9) + 1;	
-			if(predictWinLocation()) {}
+			if(findingWinLocation()) {}
 		} while (!checkIfEmpty(desiredLocation));
 		
 		board[desiredLocation] = computerInput;
 		showBoard();
 	}
-	
 	public static boolean checkWinner() {
 		if (win)
 			return true;
@@ -105,7 +105,7 @@ public class TicTacToeBoard
 			System.out.println("tied");
 
 	}
-	public static boolean predictWinLocation() {
+	public static boolean findingWinLocation() {
 		if (board[1] == computer && board[2] == computer && board[3] == ' ') {
 			desiredLocation = 3;
 			return true;
