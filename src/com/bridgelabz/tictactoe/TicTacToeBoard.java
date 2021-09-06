@@ -2,7 +2,8 @@ package com.bridgelabz.tictactoe;
 
 import java.util.Scanner;
 
-public class TicTacToeBoard {
+public class TicTacToeBoard 
+{
 	
 	static Scanner scanner = new Scanner(System.in);
 	static char[] board = new char[11];
@@ -26,7 +27,7 @@ public class TicTacToeBoard {
 	
 	public void InputChoice() {
 		char userInput,computerInput;
-		System.out.println(" Enter input choice");
+		System.out.println("Enter input choice");
 		int choice = scanner.nextInt();
 		
 		if(choice==1) {
