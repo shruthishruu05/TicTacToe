@@ -6,7 +6,8 @@ public class TicTacToeBoard
 	static char computerInput,humanInput;
 	static Scanner scanner = new Scanner(System.in);
 	static char[] board = new char[10];
-	public static void createBoard() {
+	public static void createBoard() 
+	{
 		
 		for(int index=1;index<10;index++) {
 				board[index] = ' ';
