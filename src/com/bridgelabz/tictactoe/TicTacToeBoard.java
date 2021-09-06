@@ -6,6 +6,7 @@ public class TicTacToeBoard
 	static char computerInput,humanInput;
 	static Scanner scanner = new Scanner(System.in);
 	static char[] board = new char[10];
+	static int desiredLocation;
 	public static void createBoard() 
 	{
 		
@@ -16,21 +17,39 @@ public class TicTacToeBoard
 		showBoard();
 		
 	}
-	public static void moveDesiredLocation()
+	public static boolean checkIfEmpty(int desiredLocation)
+	{	
+		if(board[desiredLocation]== ' ')
+		{
+			return true;
+		}
+		else 
+				System.out.println("canot make a move as empty space is not available");
+		return false;
+		
+		
+	}
+	private static void moveDesiredLocation(char value,boolean result) 
 	{
-		System.out.println("select between 1 to 9 to make a move to a desired location");
-		int desiredLocation = scanner.nextInt();
+		if(result == true)
+		{
+		board[desiredLocation] = value;
+		showBoard();
+		}
+		else {
+			System.out.println("location occupied");
+		}
 		
 	}
 	public static void showBoard() {
 		System.out.println("Board representation");
-		for(int index1=0; index1<3; index1++) {
-			for(int index2=0; index2<3; index2++) {
-				System.out.print(board[index1+index2+1]+" | ");
-			}
-			System.out.print("\n");
-			System.out.println("");
+		
+		for(int index=1;index<10;index++) {
+			
+			System.out.print(board[index]+"|");
+			if(index%3 == 0) System.out.println();
 		}
+		
 	}
 	public static void playerInputChoice() {
 		
@@ -43,8 +62,13 @@ public class TicTacToeBoard
 	public static void main(String [] args) {
 		playerInputChoice();
 		createBoard();
-		moveDesiredLocation();
-		
+		System.out.println("Enter a desired location");
+		desiredLocation = scanner.nextInt();
+		boolean result = checkIfEmpty(desiredLocation);
+		System.out.println("Enter the value");
+		char value = scanner.next().charAt(0);
+		moveDesiredLocation(value,result);
 	}
+	
 }
 
