@@ -263,9 +263,8 @@ public class TicTacToeBoard
 		createBoard();
 		playerInputChoice();
 		checkWhoPlays();
-		//showBoard();
+		showBoard();
 		start();
-
 	}
 }
 
