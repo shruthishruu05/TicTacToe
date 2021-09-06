@@ -361,7 +361,6 @@ public class TicTacToeBoard
 		System.out.println("Computer choice is : " + computerInput);
 	}
 	
-	
 	public static void checkWhoPlays()
 	{
 		System.out.println("Tossing");
