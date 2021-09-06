@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class TicTacToeBoard 
 {
-	
 	static Scanner scanner = new Scanner(System.in);
 	static char[] board = new char[11];
 	public void start() {
@@ -24,20 +23,11 @@ public class TicTacToeBoard
 			System.out.println();
 		}
 	}
-	
-	public void InputChoice() {
-		char userInput,computerInput;
-		System.out.println("Enter input choice");
-		int choice = scanner.nextInt();
+	public char InputChoice() {
 		
-		if(choice==1) {
-			 userInput='X';
-			 computerInput = 'O';
-		}
-		else {
-			userInput='O';
-			computerInput = 'X';
-		}
+		System.out.println("Enter letter: ");
+		return scanner.next().toUpperCase().charAt(0);
+		
 		
 	}
 }

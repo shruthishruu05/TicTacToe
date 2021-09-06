@@ -6,6 +6,7 @@ public class TicTacToeMain {
 		System.out.println("Toc Tac Tao Game");
 		ticTacToeBoard.start();
 		System.out.println("Please enter 'O' or 'X'");
-		ticTacToeBoard.InputChoice();
+		char userInput = ticTacToeBoard.InputChoice();
+		char computerLetter = (userInput=='X')?'O':'X';
 	}
 }
