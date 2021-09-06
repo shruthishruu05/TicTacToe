@@ -43,10 +43,25 @@ public class TicTacToeBoard
 			}
 		}
 	}
+	private static int checkForAvailableCorners() {
+		if(board[1]==' ')
+			return 1;
+		else if(board[3]==' ')
+			return 3;
+		else if(board[7]==' ')
+			return 7;
+		else if(board[9]==' ')
+			return 9;
+		else
+			return 0;
+	}
 	public static void computerMove() {
 		do {
 			desiredLocation = 	(int)(Math.floor(Math.random()*10)%9) + 1;	
 			if(findingWinLocationBlock()) {}
+			else {
+				desiredLocation = checkForAvailableCorners();
+			}
 		} while (!checkIfEmpty(desiredLocation));
 		
 		board[desiredLocation] = computerInput;
@@ -336,6 +351,7 @@ public class TicTacToeBoard
 		System.out.println("Computer choice is : " + computerInput);
 	
 	}
+	
 	
 	public static void checkWhoPlays()
 	{
