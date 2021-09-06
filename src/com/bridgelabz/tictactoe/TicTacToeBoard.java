@@ -11,6 +11,12 @@ public class TicTacToeBoard
 	private static boolean humanInputToss;
 	private static boolean win = false;
 	
+	private static boolean checkCenterAvailability() {
+		if(board[5]==' ')
+			return true;
+		else
+			return false;
+	}
 	public static void createBoard() 
 	{
 		
@@ -38,6 +44,7 @@ public class TicTacToeBoard
 			}
 			else 
 			{
+				
 				System.out.println("Invalid Choice");
 
 			}
@@ -61,6 +68,9 @@ public class TicTacToeBoard
 			if(findingWinLocationBlock()) {}
 			else {
 				desiredLocation = checkForAvailableCorners();
+			}
+			if(checkCenterAvailability()) {
+		
 			}
 		} while (!checkIfEmpty(desiredLocation));
 		
